@@ -1,8 +1,11 @@
 import React from 'react';
 
 const NavBar = () => {
-    const style={'backgroundColor' : 'rgb(220,215,180)'}
+    const style={
+        'backgroundColor' : 'rgb(220,215,180)'
+    }
     const brandStyle = {'fontFamily' : 'Poppins, sans-serif', 'fontSize' : '1.6em'}
+
   return <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={style}>
         <div className="container-fluid p-4">
             <a className="navbar-brand fw-bold" style={brandStyle} href="#/">Dúo Austral</a>

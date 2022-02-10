@@ -2,28 +2,22 @@ import React from 'react';
 
 const AboutUs = () => {
 
-    const style={'backgroundColor' : 'rgb(220,215,180)'}
-    const videoWrapper = {'position' : 'relative', 'paddingBottom': '56.25%', 'height' : '0'}
-    const iframeStyle = {'position' : 'absolute', 'top' : '0', 'left' : '0', 'width' : '100%', 'height' : '100%'}
-    const videoTitle = {
-        'position' : 'relative',
-        'top' : '-48vh',
-        'left' : '-8vw',
-        'fontSize' : '9em',
-        'color' : 'white',
-        'fontFamily' : 'anton,sans-serif',
-        'textAlign' : 'left',
-        'lineHeight' : '1em',
-        'maxHeight' : '0'
+    const poppinsFont = {'fontFamily' : 'Poppins, sans-serif'}
+    const style = {
+        'backgroundColor' : 'rgb(255,255,255)',
+        'height' : '100vh'
     }
+
   return <div className="w-100" style={style}>
-      <div className="row justify-content-center">
-        <div className="col col-md-10 col-lg-8">
-            <div style={videoWrapper}>
-                <iframe style={iframeStyle} src="https://www.youtube.com/embed/wP2FoDP7yfo?autoplay=1&mute=1&loop=1&controls=2&playlist=wP2FoDP7yfo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <div className="container p-4">
+        <div className="row p-4" style={poppinsFont}>
+            <div className="col col-md-6 p-4 text-start">
+                <h5 className="pb-3">Sobre nosotros</h5>
+                <h2>Dúo Austral</h2>
             </div>
-            <div style={videoTitle}>DÚO<br />AUSTRAL</div>
-            <div className="h2">Una nueva forma de disfrutar la música</div>
+            <div className="col col-md-6 p-4 text-start lh-lg">
+                <p>Somos Rodrigo y Nacho, un dúo de violín y viola radicado en Barcelona. Nos apasiona la música en todos sus géneros, desde la popular a la académica. Nuestro origen latinoamericano nos nutrió de sus hermosos estilos musicales, como el tan amado Tango que siempre incluimos en nuestro repertorio. Nos divierte adaptar la música de artistas actuales a nuestros instrumentos, y así transformarla en un nueva forma de oírla.</p>
+            </div>
         </div>
       </div>
   </div>;
