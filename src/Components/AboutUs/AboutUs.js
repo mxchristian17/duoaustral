@@ -8,7 +8,7 @@ const AboutUs = () => {
         'height' : '100vh'
     }
 
-  return <div className="w-100" style={style}>
+  return <div className="w-100" style={style} id="sobre-nosotros">
       <div className="container p-4">
         <div className="row p-4" style={poppinsFont}>
             <div className="col col-md-6 p-4 text-start">

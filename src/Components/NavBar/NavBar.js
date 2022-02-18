@@ -1,10 +1,17 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const NavBar = () => {
     const style={
         'backgroundColor' : 'rgb(220,215,180)'
     }
     const brandStyle = {'fontFamily' : 'Poppins, sans-serif', 'fontSize' : '1.6em'}
+
+    const scrollWithOffset = (el) => {
+        const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+        const yOffset = -100; 
+        window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+    }
 
   return <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={style}>
         <div className="container-fluid p-4">
@@ -18,7 +25,7 @@ const NavBar = () => {
                         <a className="nav-link active" aria-current="page" href="#/">Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#/">Sobre Nosotros</a>
+                        <Link className="nav-link" to="#sobre-nosotros" scroll={el => scrollWithOffset(el)}>Sobre Nosotros</Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#/">Servicios</a>

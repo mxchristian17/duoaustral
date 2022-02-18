@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 
 const Video = () => {
-
+    
     const [ videoTitleVisible, setVideoTitleVisible ] = useState(true)
+    const [ videoTitleShowing, setVideoTitleShowing ] = useState(0)
+
+    const videoTitleShowInterval = 1000
     
     const style = {
         'backgroundColor' : 'rgb(220,215,180)',
@@ -20,6 +23,7 @@ const Video = () => {
         'width' : '100%',
         'height' : '100%'
     }
+
     const videoTitle = {
         'position' : 'relative',
         'top' : '-23vw',
@@ -30,14 +34,26 @@ const Video = () => {
         'textAlign' : 'left',
         'lineHeight' : '1em',
         'maxHeight' : '0',
-        'display' : videoTitleVisible ? 'block' : 'none'
+        'display' : videoTitleVisible ? 'block' : 'none',
+        'opacity' : videoTitleShowing ? '0' : '1',
+        'transition' : 'opacity 1s'
+    }
+
+    const videoTitleShow = () => {
+
+        setVideoTitleVisible(true)
+        setVideoTitleShowing(true)
+        setTimeout(() => {
+            setVideoTitleShowing(false)
+        }, videoTitleShowInterval)
+        
     }
 
   return <div className="w-100" style={style}>
       <div className="row justify-content-center w-100">
         <div className="col col-md-10 col-lg-8">
             <div style={videoWrapper}>
-                <iframe onMouseEnter={() => setVideoTitleVisible(false)} onMouseLeave={() => setVideoTitleVisible(true)} style={iframeStyle} src="https://www.youtube.com/embed/wP2FoDP7yfo?autoplay=1&mute=1&loop=1&controls=2&playlist=wP2FoDP7yfo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe onMouseEnter={() => setVideoTitleVisible(false)} onMouseLeave={videoTitleShow} style={iframeStyle} src="https://www.youtube.com/embed/wP2FoDP7yfo?autoplay=1&mute=1&loop=1&controls=2&playlist=wP2FoDP7yfo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
             <div style={videoTitle}>DÚO<br />AUSTRAL</div>
             <div className="h3 w-100 text-end p-4 m-0">Una nueva forma de<br />disfrutar la música</div>
