@@ -2,3 +2,15 @@
 .App {
   text-align: center;
 }
+
+@media (orientation: landscape) {
+  .video-ratio {
+    --bs-aspect-ratio: calc(9 / 16 * 100%);
+  }
+}
+
+@media (orientation: portrait) {
+  .video-ratio {
+    --bs-aspect-ratio: 100%;
+  }
+}
