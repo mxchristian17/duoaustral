@@ -1,38 +1,29 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player/youtube'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVolumeMute, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 
 const Video = (props) => {
     
     const [ videoTitleVisible, setVideoTitleVisible ] = useState(true)
     const [ videoTitleShowing, setVideoTitleShowing ] = useState(0)
     const [ volume, setVolume ] = useState(1)
-    const { muted, setMuted } = props
+    const [ loading, setLoading ] = useState(true)
+    const { muted, setMuted, muteToggle } = props
     
 
     const videoTitleShowInterval = 1000
     
     const style = {
-        'backgroundColor' : 'rgb(220,215,180)',
-        'height' : '100vh'
-    }
-    const videoWrapper = {
-        'position' : 'relative',
-        'paddingBottom': '56.25%',
-        'height' : '0'
-    }
-    const iframeStyle = {
-        'position' : 'absolute',
-        'top' : '0',
-        'left' : '0',
-        'width' : '100%',
-        'height' : '100%'
+        'height' : 'calc(100vh - 7rem)',
+        'backgroundColor' : 'rgb(220,215,180)'
     }
 
     const videoTitle = {
         'position' : 'relative',
         'top' : '-23vw',
         'left' : '-8vw',
-        'fontSize' : '8em',
+        'fontSize' : '10vw',
         'color' : 'white',
         'fontFamily' : 'anton,sans-serif',
         'textAlign' : 'left',
@@ -53,49 +44,50 @@ const Video = (props) => {
         
     }
 
-    
+    const updateVolume = (e) => {
+        parseFloat(e.target.value) === 0 ? setMuted(true) : setMuted(false)
+        setVolume(e.target.value)
+    }
+
+    const muteIcon = muted ? <FontAwesomeIcon icon={faVolumeMute} /> : <FontAwesomeIcon icon={faVolumeHigh} />
 
   return <div className="w-100 pt-4" style={style}>
-      <div className="row justify-content-center w-100 m-0">
-        <div className="col col-md-10 col-lg-8 p-0">
-{/*}
-            <div style={videoWrapper}>
-                <iframe onMouseEnter={() => setVideoTitleVisible(false)} onMouseLeave={videoTitleShow} style={iframeStyle} src="https://www.youtube.com/embed/wP2FoDP7yfo?autoplay=1&mute=1&loop=1&controls=2&playlist=wP2FoDP7yfo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </div>
-*/}
-            <div className="ratio video-ratio">
-                {//<iframe onMouseEnter={() => setVideoTitleVisible(false)} onMouseLeave={videoTitleShow} src="https://www.youtube.com/embed/wP2FoDP7yfo?autoplay=1&mute=1&loop=1&controls=2&playlist=wP2FoDP7yfo" title="Dúo Austral" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                }
-                <ReactPlayer
-                    onMouseEnter={() => setVideoTitleVisible(false)}
-                    onMouseLeave={videoTitleShow}
-                    url='https://www.youtube.com/embed/wP2FoDP7yfo'
-                    muted={muted}
-                    loop={true}
-                    volume={volume}
-                    playing={true}
-                    config={{
-                        youtube: {
-                            playerVars: { showinfo: 1 }
-                        }
-                    }} />
-            </div>
-            <div style={videoTitle}>DÚO<br />AUSTRAL</div>
-            <div className="h3 w-100 text-end p-4 m-0">Una nueva forma de<br />disfrutar la música</div>
-            <div className="position-fixed start-0 bottom-0">
-                <div className="row">
-                    <div className="col-3"></div>
-                    <div className="col-6">
-                        <input type="range" onChange={(e) => setVolume(e.target.value)} className="form-range" min="0" max="1" step="0.01" id="setVolume"></input>
+            <div className="row justify-content-center m-0 p-0">
+                <div className="col col-md-10 col-lg-8 p-0 m-0">
+                    <div className="ratio ratio-16x9">
+                        <ReactPlayer
+                            onMouseEnter={() => setVideoTitleVisible(false)}
+                            onMouseLeave={videoTitleShow}
+                            url='https://www.youtube.com/watch?v=wP2FoDP7yfo'
+                            muted={muted}
+                            loop={true}
+                            volume={parseFloat(volume)}
+                            playing={!loading}
+                            width={'100%'}
+                            height={'100%'}
+                            onReady={() => {setLoading(false)}}
+                            config={{
+                                youtube: {
+                                    playerVars: { showinfo: 1 }
+                                }
+                            }} />
                     </div>
-                    <div className="col-3">
-                        <button onClick={() => {setMuted(!muted)}} >M</button>
+                    <div style={videoTitle}>DÚO<br />AUSTRAL</div>
+                    <div className="h3 w-100 text-end p-4 m-0">Una nueva forma de<br />disfrutar la música</div>
+                    <div className="position-fixed start-0 bottom-0">
+                        <div className="row d-flex align-items-center p-2 m-0">
+                            <div className="col-2 p-0 m-0"></div>
+                            <div className="col-8 p-1 m-0">
+                                <input type="range" value={volume} onChange={updateVolume} className="form-range pt-1" min="0" max="1" step="0.01" id="setVolume"></input>
+                            </div>
+                            <div className="col-2 p-0 m-0">
+                                <button className="btn" onClick={muteToggle}>{muteIcon}</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-      </div>
-  </div>;
+        </div>;
 };
 
 export default Video;

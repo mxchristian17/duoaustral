@@ -9,20 +9,17 @@ function App() {
 
   const [ muted, setMuted ] = useState(true)
   const [ initialized, setInitialized ] = useState(false)
-
- /* if(!initialized) {
-    window.addEventListener('click', (event) => {
-        setMuted(false)
-        setInitialized(true)
-    })
-  }*/
+    
+  const muteToggle = () => {
+    muted ? setMuted(false) : setMuted(true)
+    setInitialized(true)
+  }
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" onClick={initialized ? null : muteToggle}>
         <NavBar />
-        <Video muted={muted} setMuted={setMuted} />
-        {initialized ? "inicializado" : 'no inicializado'}
+        <Video muted={muted} muteToggle={muteToggle} setMuted={setMuted} />
         <AboutUs />
       </div>
     </BrowserRouter>
