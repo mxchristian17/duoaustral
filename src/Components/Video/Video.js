@@ -15,11 +15,19 @@ const Video = (props) => {
     const videoTitleShowInterval = 1000
     
     const style = {
-        'height' : 'calc(100vh - 7rem)',
         'backgroundColor' : 'rgb(220,215,180)'
     }
 
     const videoTitle = {
+        'fontSize' : '10vw',
+        'color' : 'white',
+        'fontFamily' : 'anton,sans-serif',
+        'textAlign' : 'left',
+        'lineHeight' : '1em',
+        'display' : videoTitleVisible ? 'block' : 'none',
+        'opacity' : videoTitleShowing ? '0' : '1',
+        'transition' : 'opacity 1s'
+        /*
         'position' : 'relative',
         'top' : '-23vw',
         'left' : '-8vw',
@@ -31,7 +39,7 @@ const Video = (props) => {
         'maxHeight' : '0',
         'display' : videoTitleVisible ? 'block' : 'none',
         'opacity' : videoTitleShowing ? '0' : '1',
-        'transition' : 'opacity 1s'
+        'transition' : 'opacity 1s'*/
     }
 
     const videoTitleShow = () => {
@@ -53,7 +61,7 @@ const Video = (props) => {
 
   return <div className="w-100 pt-4" style={style}>
             <div className="row justify-content-center m-0 p-0">
-                <div className="col col-md-10 col-lg-8 p-0 m-0">
+                <div className="position-relative col col-md-10 col-lg-8 p-0 m-0">
                     <div className="ratio ratio-16x9">
                         <ReactPlayer
                             onMouseEnter={() => setVideoTitleVisible(false)}
@@ -72,7 +80,13 @@ const Video = (props) => {
                                 }
                             }} />
                     </div>
-                    <div style={videoTitle}>DÚO<br />AUSTRAL</div>
+                    <div className="position-absolute bottom-0 start-0 h-75">
+                        <div className="row m-0 p-0 d-flex align-items-center">
+                            <div className="col col-md-10 col-lg-10">
+                                <div style={videoTitle}>DÚO<br />AUSTRAL</div>
+                            </div>
+                        </div>
+                    </div>
                     <div className="h3 w-100 text-end p-4 m-0">Una nueva forma de<br />disfrutar la música</div>
                     <div className="position-fixed start-0 bottom-0">
                         <div className="row d-flex align-items-center p-2 m-0">
