@@ -88,7 +88,7 @@ const Video = (props) => {
                         </div>
                     </div>
                     <div className="h3 w-100 text-end p-4 m-0">Una nueva forma de<br />disfrutar la música</div>
-                    <div className="position-fixed start-0 bottom-0">
+                    <div style={{'zIndex' : '2'}} className="position-fixed start-0 bottom-0">
                         <div className="row d-flex align-items-center p-2 m-0">
                             <div className="col-2 p-0 m-0"></div>
                             <div className="col-8 p-1 m-0">
