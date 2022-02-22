@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import $ from 'jquery';
 
 const NavBar = () => {
     const style={
@@ -12,6 +13,10 @@ const NavBar = () => {
         const yOffset = -100; 
         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
     }
+
+    $('.navbar-collapse a').click(function(){
+        $(".navbar-collapse").removeClass('show');
+    });
 
   return <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={style}>
         <div className="container-fluid p-4">
