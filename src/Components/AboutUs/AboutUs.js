@@ -4,8 +4,7 @@ const AboutUs = () => {
 
     const poppinsFont = {'fontFamily' : 'Poppins, sans-serif'}
     const style = {
-        'backgroundColor' : 'rgb(255,255,255)',
-        'height' : '100vh'
+        'backgroundColor' : 'rgb(255,255,255)'
     }
     const pictureStyle = {
         'objectFit': 'none',
@@ -51,7 +50,7 @@ const AboutUs = () => {
         <div className="row py-1 px-2" style={poppinsFont}>
             <div className="col col-lg-4 p-2 p-lg-4 text-start lh-lg fw-light">
                 <h2 className="fw-bold d-none d-lg-block pb-4">Nacho</h2>
-                <p className="text-center text-lg-start">Comencé mis estudios de violín en la Municipalidad de Lo Prado en Chile, donde rápidamente integré orquestas juveniles desempeñandome como concertino. He realizado cursos de perfeccionamiento en Canadá y Argentina, nutriéndome de grandes maestros del violín. Actualmente estoy realizando el nivel superior de interpretación en música clásica en el conservatorio del Liceu de Barcelona.</p>
+                <p className="text-center text-lg-start">Soy de Buenos Aires, Argentina, ciudad donde realicé mis estudios superiores en viola y formé parte de la Orquesta Sinfónica Nacional, la Orquesta Estable del Teatro Colon y la Orquesta de Tango de Buenos Aires. Actualmente me encuentro en Barcelona realizando el master en interpretación en la ESMUC.</p>
             </div>
             <div style={{'zIndex' : '1'}} className="col-lg-7 px-0 px-lg-4 py-lg-4 d-flex flex-wrap align-items-center justify-content-center order-first order-lg-last">
                 <img src="../Images/foto-nacho-solo.webp" alt="Nacho" className="img-fluid" style={pictureStyle} />

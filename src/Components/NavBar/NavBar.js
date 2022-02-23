@@ -27,13 +27,13 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#/">Home</a>
+                        <Link className="nav-link"aria-current="page"  to="/#" scroll={el => scrollWithOffset(el)}>Home</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="#sobre-nosotros" scroll={el => scrollWithOffset(el)}>Sobre Nosotros</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#/">Servicios</a>
+                        <Link className="nav-link" to="#servicios" scroll={el => scrollWithOffset(el)}>Servicios</Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#/">Galería de Fotos</a>

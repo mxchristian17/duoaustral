@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import AboutUs from './Components/AboutUs/AboutUs';
 import Video from './Components/Video/Video';
+import Services from './Components/Services/Services';
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <NavBar />
         <Video muted={muted} muteToggle={muteToggle} setMuted={setMuted} />
         <AboutUs />
+        <Services />
       </div>
     </BrowserRouter>
   );
