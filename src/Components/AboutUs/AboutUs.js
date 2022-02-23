@@ -55,7 +55,7 @@ const AboutUs = () => {
             <div style={{'zIndex' : '1'}} className="col-lg-7 px-0 px-lg-4 py-lg-4 d-flex flex-wrap align-items-center justify-content-center order-first order-lg-last">
                 <img src="../Images/foto-nacho-solo.webp" alt="Nacho" className="img-fluid" style={pictureStyle} />
             </div>
-            <div className="d-none d-lg-block position-absolute end-0 h-75 w-50 me-4" style={{'zIndex' : '0', 'backgroundColor' : '#EEEEEE'}}></div>
+            <div className="d-none d-lg-block position-absolute end-0 w-50 me-4 ratio ratio-1x1" style={{'zIndex' : '0', 'backgroundColor' : '#EEEEEE'}}></div>
         </div>
       </div>
     </div>;
