@@ -39,7 +39,7 @@ const AboutUs = () => {
                 <h2 className="fw-bold d-none d-lg-block pb-4">Rodri</h2>
                 <p className="text-center text-lg-start">Comencé mis estudios de violín en la Municipalidad de Lo Prado en Chile, donde rápidamente integré orquestas juveniles desempeñandome como concertino. He realizado cursos de perfeccionamiento en Canadá y Argentina, nutriéndome de grandes maestros del violín. Actualmente estoy realizando el nivel superior de interpretación en música clásica en el conservatorio del Liceu de Barcelona.</p>
             </div>
-            <div className="d-none d-lg-block position-absolute h-75 w-25" style={{'zIndex' : '0', 'backgroundColor' : '#EEEEEE'}}></div>
+            <div className="d-none d-lg-block position-absolute w-25 ratio ratio-16x9" style={{'zIndex' : '0', 'backgroundColor' : '#EEEEEE'}}></div>
         </div>
 
         <div className="row p-1 m-0">
@@ -55,7 +55,7 @@ const AboutUs = () => {
             <div style={{'zIndex' : '1'}} className="col-lg-7 px-0 px-lg-4 py-lg-4 d-flex flex-wrap align-items-center justify-content-center order-first order-lg-last">
                 <img src="../Images/foto-nacho-solo.webp" alt="Nacho" className="img-fluid" style={pictureStyle} />
             </div>
-            <div className="d-none d-lg-block position-absolute end-0 w-50 me-4 ratio ratio-1x1" style={{'zIndex' : '0', 'backgroundColor' : '#EEEEEE'}}></div>
+            <div className="d-none d-lg-block position-absolute end-0 w-50 me-4 ratio ratio-21x9" style={{'zIndex' : '0', 'backgroundColor' : '#EEEEEE'}}></div>
         </div>
       </div>
     </div>;
