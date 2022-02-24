@@ -44,7 +44,7 @@ const Gallery = () => {
     }
 
   return (
-    <div className="w-100 mt-lg-4 p-3 bg-white" id="galeria-de-fotos">
+    <div className="w-100 mt-lg-4 p-lg-3 bg-white" id="galeria-de-fotos">
         <div className="row p-2 py-4 my-4">
             <div className="col">
                 <h5 style={{'fontWeight' : '600'}}>Galería de Fotos</h5>
