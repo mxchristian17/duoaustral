@@ -4,6 +4,7 @@ import NavBar from './Components/NavBar/NavBar';
 import AboutUs from './Components/AboutUs/AboutUs';
 import Video from './Components/Video/Video';
 import Services from './Components/Services/Services';
+import Gallery from './Components/Gallery/Gallery';
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Video muted={muted} muteToggle={muteToggle} setMuted={setMuted} />
         <AboutUs />
         <Services />
+        <Gallery />
       </div>
     </BrowserRouter>
   );
