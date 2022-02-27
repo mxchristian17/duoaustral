@@ -36,13 +36,13 @@ const NavBar = () => {
                         <Link className="nav-link" to="#servicios" scroll={el => scrollWithOffset(el)}>Servicios</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#/">Galería de Fotos</a>
+                        <Link className="nav-link" to="#galeria-de-fotos" scroll={el => scrollWithOffset(el)}>Galería de Fotos</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#/">Mensajes</a>
+                        <Link className="nav-link" to="#mensajes" scroll={el => scrollWithOffset(el)}>Mensajes</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#/">Contacto</a>
+                        <Link className="nav-link" to="#contacto" scroll={el => scrollWithOffset(el)}>Contacto</Link>
                     </li>
                 </ul>
             </div>
