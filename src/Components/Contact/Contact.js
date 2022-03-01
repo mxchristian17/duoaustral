@@ -101,7 +101,7 @@ const Contact = () => {
                 </div>
                 <div>
                     <div>Mail: <a href="mailto:duo.austral.barcelona@gmail.com" className="text-decoration-none">duo.austral.barcelona@gmail.com</a></div>
-                    <div>Móvil / Whatsapp: <a href="https://wa.me/+34658277392" target="_blank" className="text-decoration-none">+34 658 27 73 92</a></div>
+                    <div>Móvil / Whatsapp: <a href="https://wa.me/+34658277392" target="_blank" rel="noreferrer" className="text-decoration-none">+34 658 27 73 92</a></div>
                 </div>
             </div>
             <div className="row">
