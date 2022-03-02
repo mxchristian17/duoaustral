@@ -9,6 +9,10 @@ import Messages from './Components/Messages/Messages';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
+import ReactGA from "react-ga";
+
+ReactGA.initialize(process.env.REACT_APP_PROPERTY_TRACKING_ID);
+ReactGA.pageview("/");
 
 function App() {
 
