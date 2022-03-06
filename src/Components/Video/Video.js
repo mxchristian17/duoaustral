@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player/youtube'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeMute, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
+import YouTube from '@u-wave/react-youtube';
 
 const Video = (props) => {
     
@@ -63,7 +64,7 @@ const Video = (props) => {
             <div className="row justify-content-center m-0 p-0">
                 <div className="position-relative col col-md-10 col-lg-8 p-0 m-0">
                     <div className="ratio ratio-16x9">
-                        <ReactPlayer
+                        {/*<ReactPlayer
                             onMouseEnter={() => setVideoTitleVisible(false)}
                             onMouseLeave={videoTitleShow}
                             url='https://www.youtube.com/embed/wP2FoDP7yfo'
@@ -79,12 +80,18 @@ const Video = (props) => {
                                     playerVars: {
                                         showinfo: 0,
                                         controls: 0,
-                                        origin: 'https://duoaustral.netlify.app/'//window.location.origin
+                                        rel: 0,
+                                        start: 0,
+                                        origin: window.location.origin
                                     }
                                 }
-                            }} />
+                            }} />*/}
+                        <YouTube
+                            video="wP2FoDP7yfo"
+                            autoplay
+                        />
                     </div>
-                    {loading ? 'loading' : 'not loading'}
+                    {loading ? 'loading' : window.location.origin}
                     <div className="position-absolute bottom-0 start-0 h-75">
                         <div className="row m-0 p-0 d-flex align-items-center">
                             <div className="col col-md-10 col-lg-10">
