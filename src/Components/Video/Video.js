@@ -66,7 +66,7 @@ const Video = (props) => {
                         <ReactPlayer
                             onMouseEnter={() => setVideoTitleVisible(false)}
                             onMouseLeave={videoTitleShow}
-                            url='https://www.youtube.com/watch?v=wP2FoDP7yfo'
+                            url='https://www.youtube.com/embed/wP2FoDP7yfo'
                             muted={muted}
                             loop={true}
                             volume={parseFloat(volume)}
@@ -77,8 +77,9 @@ const Video = (props) => {
                             config={{
                                 youtube: {
                                     playerVars: {
-                                        showinfo: 1,
-                                        origin: window.location.origin
+                                        showinfo: 0,
+                                        controls: 0,
+                                        origin: 'https://duoaustral.netlify.app/'//window.location.origin
                                     }
                                 }
                             }} />
