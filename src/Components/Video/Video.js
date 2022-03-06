@@ -76,10 +76,14 @@ const Video = (props) => {
                             onReady={() => {setLoading(false)}}
                             config={{
                                 youtube: {
-                                    playerVars: { showinfo: 1 }
+                                    playerVars: {
+                                        showinfo: 1,
+                                        origin: window.location.origin
+                                    }
                                 }
                             }} />
                     </div>
+                    {loading ? 'loading' : 'not loading'}
                     <div className="position-absolute bottom-0 start-0 h-75">
                         <div className="row m-0 p-0 d-flex align-items-center">
                             <div className="col col-md-10 col-lg-10">
