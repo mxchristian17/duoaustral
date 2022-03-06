@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-//import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player/youtube'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeMute, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
-import YouTube from 'react-youtube';
 
 
 const Video = (props) => {
@@ -29,19 +28,6 @@ const Video = (props) => {
         'display' : videoTitleVisible ? 'block' : 'none',
         'opacity' : videoTitleShowing ? '0' : '1',
         'transition' : 'opacity 1s'
-        /*
-        'position' : 'relative',
-        'top' : '-23vw',
-        'left' : '-8vw',
-        'fontSize' : '10vw',
-        'color' : 'white',
-        'fontFamily' : 'anton,sans-serif',
-        'textAlign' : 'left',
-        'lineHeight' : '1em',
-        'maxHeight' : '0',
-        'display' : videoTitleVisible ? 'block' : 'none',
-        'opacity' : videoTitleShowing ? '0' : '1',
-        'transition' : 'opacity 1s'*/
     }
 
     const videoTitleShow = () => {
@@ -65,7 +51,7 @@ const Video = (props) => {
             <div className="row justify-content-center m-0 p-0">
                 <div className="position-relative col col-md-10 col-lg-8 p-0 m-0">
                     <div className="ratio ratio-16x9">
-                        {/*<ReactPlayer
+                        <ReactPlayer
                             onMouseEnter={() => setVideoTitleVisible(false)}
                             onMouseLeave={videoTitleShow}
                             url='https://www.youtube.com/embed/wP2FoDP7yfo'
@@ -87,24 +73,7 @@ const Video = (props) => {
                                         origin: window.location.origin
                                     }
                                 }
-                            }} />*/}
-                        <YouTube
-                            videoId="wP2FoDP7yfo"
-                            onMouseEnter={() => setVideoTitleVisible(false)}
-                            onMouseLeave={videoTitleShow}
-                            opts={{
-                                host: `${window.location.protocol}//www.youtube.com`,
-                                playerVars: {
-                                    showinfo: 0,
-                                    controls: 0,
-                                    rel: 0,
-                                    start: 0,
-                                    enablejsapi: 0,
-                                    origin: window.location.origin
-                                }
-                            }}
-                            onReady={() => {setLoading(false)}}
-                        />
+                            }} />
                     </div>
                     {loading ? 'loading' : window.location.origin}
                     <div className="position-absolute bottom-0 start-0 h-75">
