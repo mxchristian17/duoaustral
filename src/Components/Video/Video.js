@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 //import ReactPlayer from 'react-player/youtube'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeMute, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
-import YouTube from '@u-wave/react-youtube';
+import YouTube from 'react-youtube';
+
 
 const Video = (props) => {
     
@@ -82,15 +83,26 @@ const Video = (props) => {
                                         controls: 0,
                                         rel: 0,
                                         start: 0,
+                                        enablejsapi: 0,
                                         origin: window.location.origin
                                     }
                                 }
                             }} />*/}
                         <YouTube
+                            videoId="wP2FoDP7yfo"
                             onMouseEnter={() => setVideoTitleVisible(false)}
                             onMouseLeave={videoTitleShow}
-                            video="wP2FoDP7yfo"
-                            autoplay
+                            opts={{
+                                host: `${window.location.protocol}//www.youtube.com`,
+                                playerVars: {
+                                    showinfo: 0,
+                                    controls: 0,
+                                    rel: 0,
+                                    start: 0,
+                                    enablejsapi: 1,
+                                    origin: window.location.origin
+                                }
+                            }}
                             onReady={() => {setLoading(false)}}
                         />
                     </div>
