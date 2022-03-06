@@ -75,7 +75,6 @@ const Video = (props) => {
                                 }
                             }} />
                     </div>
-                    {loading ? 'loading' : window.location.origin}
                     <div className="position-absolute bottom-0 start-0 h-75">
                         <div className="row m-0 p-0 d-flex align-items-center">
                             <div className="col col-md-10 col-lg-10">

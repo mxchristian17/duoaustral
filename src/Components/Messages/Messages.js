@@ -17,9 +17,9 @@ const Messages = () => {
     };
 
     const images = [
-        ['MIKE & MIA', "“I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.”"],
-        ['ANDREA & DANIELLE', "“I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.”"],
-        ['LAUREN & SEAN', "“I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.”"]
+        ['CHRIS & DELFI', "“Ha sido un placer para nosotros poder escucharlos. Sentir su música en vivo nos ha hecho emocionar hasta la fibra más intima”"],
+        ['MARCE', "“Excelente calidad musical. Soy entendida en la materia y les doy un 10!”"],
+        ['CAMI & PABLO', "“Sin dudas lo mejor de nuestra boda fue el Duo Austral. Todos los invitados nos han felicitado por su concierto.”"]
       ];
 
   return (
