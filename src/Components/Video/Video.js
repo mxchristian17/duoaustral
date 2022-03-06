@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactPlayer from 'react-player/youtube'
+//import ReactPlayer from 'react-player/youtube'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeMute, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
 import YouTube from '@u-wave/react-youtube';
@@ -87,8 +87,11 @@ const Video = (props) => {
                                 }
                             }} />*/}
                         <YouTube
+                            onMouseEnter={() => setVideoTitleVisible(false)}
+                            onMouseLeave={videoTitleShow}
                             video="wP2FoDP7yfo"
                             autoplay
+                            onReady={() => {setLoading(false)}}
                         />
                     </div>
                     {loading ? 'loading' : window.location.origin}
