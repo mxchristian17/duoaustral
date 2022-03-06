@@ -99,7 +99,7 @@ const Video = (props) => {
                                     controls: 0,
                                     rel: 0,
                                     start: 0,
-                                    enablejsapi: 1,
+                                    enablejsapi: 0,
                                     origin: window.location.origin
                                 }
                             }}
